@@ -593,16 +593,11 @@ func DefaultSingleNodeGenesisBlock() *Genesis {
 
 // DefaultTestnetGenesisBlock returns the Ropsten network genesis block.
 func DefaultTestnetGenesisBlock() *Genesis {
-	seedkey1 := hexutil.MustDecode("0x042afba5a6680b5361bb57761ca67a7ea309d2883bda93c5d9521078258bb97b03610002865fb27993fcea4918023144eb516706ea33c7c94fef7b2f330cb9d0a6")
-	seedkey2 := hexutil.MustDecode("0x04e444bc40b6d1372a955fb9bb9a986ceb1c13a450794151fbf48033189351f6bddddcbebfa5c6d205887551e9527e6deff2cbee9f233ffe14fd15db4beb9c9f34")
-	seedkey3 := hexutil.MustDecode("0x049620df839696f4451842fd543b38d171f7f215dcd2c7fcd813c0206f097206a67b25ad719fbb62570c4a4ba467ec61aa396788e3ae79c704a62ea759beca3175")
-	seedkey4 := hexutil.MustDecode("0x04f714bb815a9ecc505eae7e756b63753850df92a0fe4c99dc8b6660ba17bbcbb88000d9efb524eb38746ef4505ad2ab1895efccbcc966d4c685c811bda7c9d8ef")
+	seedkey1 := hexutil.MustDecode("0x0491de396ce580733f02a8c67591e136e42143c35d106ed3f0e8878fbf16e0999e322e237c5a35156c2b4e2e6790a6a9cc29e109d3551224985e0ec951a2f4dad7")
+	seedkey2 := hexutil.MustDecode("0x040f4932807f8ba686dfca368ec129ace5b2f58d9c38927091f3c2aecca54e437c0d7fa83e7d954f4394858e1f5bded822c19cf98a905d9dd3a6dc9ed427c49b53")
+	seedkey3 := hexutil.MustDecode("0x043152c806f94872bfd4cc141be3153cb043576b68f9deec7a5bb33e38f31ebcf37d5a290be35180e1042282e0987cdefaa34e2b650dff30566c2132b3f0912476")
+	seedkey4 := hexutil.MustDecode("0x04cb84733027589ef96c310e2b7a385c5e5d06767a8f3953ee9880786a33da505706aa15ae465688f1974edd1075cd96b026611f455ae6703dc50e93b50ab992d6")
 
-	seedkey5 := hexutil.MustDecode("0x04c0617eef5000dc4a48fb4483735a33c7b2e58e3301fec13b55e9369f8b2bd04c59d899a1fe977b06a3db71fd7c8036b564ffa07171071835a7bb9e24cff22312")
-	seedkey6 := hexutil.MustDecode("0x0420bf209047d5eace814848692360a83065841ee91445a8b71b6092f681bf7741a5497ae0a28c401cda133ba8d12ca3dbc6ae756d2fc55288abc159c2ddf601fc")
-	seedkey7 := hexutil.MustDecode("0x043736280e96284f5d9460fd874f2dbe6b82ae29d7f348b931f540cc7612f41f20319c76ac90f3de8c68db2e9c7cf9bdfe0fca62046b0f35d01404d49d1de2a43e")
-
-	coinbase := common.HexToAddress("0x7c357530174275dd30e46319b89f71186256e4f7")
 	amount1, _ := new(big.Int).SetString("24000000000000000000000000", 10)
 	return &Genesis{
 		Config:     params.TestnetChainConfig,
@@ -618,13 +613,10 @@ func DefaultTestnetGenesisBlock() *Genesis {
 			common.HexToAddress("0x7c357530174275dd30e46319b89f71186256e4f7"): {Balance: amount1},
 		},
 		Committee: []*types.CommitteeMember{
-			&types.CommitteeMember{Coinbase: coinbase, Publickey: seedkey1},
-			&types.CommitteeMember{Coinbase: coinbase, Publickey: seedkey2},
-			&types.CommitteeMember{Coinbase: coinbase, Publickey: seedkey3},
-			&types.CommitteeMember{Coinbase: coinbase, Publickey: seedkey4},
-			&types.CommitteeMember{Coinbase: coinbase, Publickey: seedkey5},
-			&types.CommitteeMember{Coinbase: coinbase, Publickey: seedkey6},
-			&types.CommitteeMember{Coinbase: coinbase, Publickey: seedkey7},
+			{Coinbase: common.HexToAddress("0x6324b2227013a7F2fe4958545A6e08c6E4305A60"), Publickey: seedkey1},
+			{Coinbase: common.HexToAddress("0x2E0333828E4C9650E9A840B1222Ad8B8BF8F9354"), Publickey: seedkey2},
+			{Coinbase: common.HexToAddress("0xf21B3C907CCF57fB4F40333E8BFD92317815498f"), Publickey: seedkey3},
+			{Coinbase: common.HexToAddress("0x29e98029A155A7deb1BA1271a1012Ae662DDf701"), Publickey: seedkey4},
 		},
 	}
 }

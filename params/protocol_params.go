@@ -182,13 +182,13 @@ var (
 
 	MaximumCommitteeNumber  = big.NewInt(50)
 	ProposalCommitteeNumber = 20
-	MinimumCommitteeNumber  = 7
+	MinimumCommitteeNumber  = 4
 )
 
 var (
 	CountInEpoch                      = 20
 	MaxRedeemHeight            uint64 = 250000 // about 15 days
-	NewEpochLength             uint64 = 25000  // about 1.5 days
+	NewEpochLength             uint64 = 500    // about 1.5 days
 	ElectionPoint              uint64 = 200
 	FirstNewEpochID            uint64 = 1
 	DposForkPoint              uint64 = 0
